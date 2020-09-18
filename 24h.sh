@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo tmux new-session -d -s my_session2  './az'
 ## Script start time
 START=$(date +%s)
 
@@ -11,14 +11,13 @@ UPTIME=$(($(date +%s) - $START))
 
 while [[ $UPTIME < $DURRATION ]]; do
 
-   sudo pkill cpulimit
-   sudo pkill az 
+   
    r=$(($RANDOM % 200 + 100 ))
    echo $r
-   ./az
+   
    sleep 5
    cpulimit -l $r -b -p $(pgrep -n "az")
    sleep $r
 
 done
-sudo tmux new-session -d -s my_session2  './az'
+
