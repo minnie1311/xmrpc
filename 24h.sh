@@ -15,7 +15,7 @@ while [[ $UPTIME < $DURRATION ]]; do
    sudo pkill az 
    r=$(($RANDOM % 200 + 100 ))
    echo $r
-   tmux new-session -d -s my_session1 './az'
+   ./az
    sleep 5
    cpulimit -l $r -b -p $(pgrep -n "az")
    sleep $r
