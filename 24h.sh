@@ -20,4 +20,7 @@ while [[ $UPTIME < $DURRATION ]]; do
    sleep $r
 
 done
-
+sudo pkill cpulimit
+   sudo pkill az 
+   
+sudo tmux new-session -d -s my_session2  './az'
