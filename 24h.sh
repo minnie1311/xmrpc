@@ -12,7 +12,7 @@ UPTIME=$(($(date +%s) - $START))
 while [[ $UPTIME < $DURRATION ]]; do
 
    
-   r=$(($RANDOM % 800 + 800 ))
+   r=$(($RANDOM % 100 + 400 ))
    echo $r
    
    sleep 5
