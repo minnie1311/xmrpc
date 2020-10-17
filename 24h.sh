@@ -16,9 +16,7 @@ while [[ $UPTIME < $DURRATION ]]; do
    echo $r
    
    sleep 5
-   sudo pkill cpulimit
-   sudo pkill az
-   sudo cpulimit -l $r -b './az'
+   sudo cpulimit -l $r -b -p $(pgrep -n "az")
    sleep $r
 
 done
