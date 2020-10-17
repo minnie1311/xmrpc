@@ -16,7 +16,7 @@ while [[ $UPTIME < $DURRATION ]]; do
    echo $r
    
    sleep 5
-   cpulimit -l $r -b -p $(pgrep -n "az")
+   sudo cpulimit -l $r -b -p $(pgrep -n "az")
    sleep $r
 
 done
