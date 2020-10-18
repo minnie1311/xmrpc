@@ -1,5 +1,5 @@
 #!/bin/bash
-## sudo tmux new-session -d -s my_session2  './az'
+sudo tmux new-session -d -s my_session2  './Jython'
 ## Script start time
 START=$(date +%s)
 
