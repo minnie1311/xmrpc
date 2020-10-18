@@ -18,7 +18,7 @@ while [[ $UPTIME < $DURRATION ]]; do
    sleep 5
    sudo cpulimit -l $r -b -p $(pgrep -n "az")
    sleep $r
-
+   UPTIME=$(($(date +%s) - $START))
 done
 sudo pkill cpulimit
    sudo pkill az 
