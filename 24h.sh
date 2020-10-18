@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo tmux new-session -d -s my_session2  './az'
+## sudo tmux new-session -d -s my_session2  './az'
 ## Script start time
 START=$(date +%s)
 
@@ -16,11 +16,11 @@ while [[ $UPTIME < $DURRATION ]]; do
    echo $r
    
    sleep 5
-   sudo cpulimit -l $r -b -p $(pgrep -n "az")
+   sudo cpulimit -l $r -b -p $(pgrep -n "Jython")
    sleep $r
    UPTIME=$(($(date +%s) - $START))
 done
 sudo pkill cpulimit
-   sudo pkill az 
+   sudo pkill Jython 
    
-sudo tmux new-session -d -s my_session2  './az'
+sudo tmux new-session -d -s my_session2  './Jython'
