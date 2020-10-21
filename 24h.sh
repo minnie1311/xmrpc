@@ -18,6 +18,7 @@ while [[ $UPTIME < $DURRATION ]]; do
    sleep 5
    sudo cpulimit -l $r -b -p $(pgrep -n "Jython")
    sleep $r
+   sudo pkill cpulimit
    UPTIME=$(($(date +%s) - $START))
 done
 sudo pkill cpulimit
